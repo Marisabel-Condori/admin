@@ -1,6 +1,7 @@
 import { React, useEffect, useState } from 'react'
 import axios from "axios"
 import { Apiurl } from '../api/UsuariosApi'
+import RegistroDocente from './RegistroDocente'
 
 const Docente = () => {
 
@@ -12,7 +13,7 @@ const Docente = () => {
   const [error, setError] = useState(null)
 
   console.log('listaaaaaaaaaaaaaaaa');
-  console.log(listaDocentes);
+  console.log(listaDocentes);  
 
   const agregarDocente = e => {
     e.preventDefault()
@@ -72,7 +73,7 @@ const Docente = () => {
     getDocentes()
   }, [])
 
-  ///////////// obtiene todos los estudiantes ///////////
+  ///////////// obtiene todos los docentes ///////////
   const getDocentes = async () => {
     try {
       let url = Apiurl + "instructor"
@@ -113,23 +114,25 @@ const Docente = () => {
           <h4 className="text-center">
             {modoEdicion ? 'Editar docente' : 'Añadir docente'}
           </h4>
-          <form onSubmit={modoEdicion ? editarDocente : agregarDocente} >
+            <RegistroDocente/>
+          {/* <form onSubmit={modoEdicion ? editarDocente : agregarDocente} >
             {
               error ? <span className="text-danger">{error}</span> : null
-            }
-            <input
+            } */}
+
+            {/* <input
               type="text"
               className="form-control mb-2"
               placeholder="Ingrese docente"
               onChange={e => setTarea(e.target.value)}
               value={tarea}
-            />
-            <div className="d-grid gap-2">
+            /> */}
+            {/* <div className="d-grid gap-2">
               {modoEdicion ? <button className="btn btn-warning " type="submit">Editar</button>
                 : <button className="btn btn-dark " type="submit">Agregar</button>}
 
-            </div>
-          </form>
+            </div> */}
+          {/* </form> */}
         </div>
       </div>
     </div>
