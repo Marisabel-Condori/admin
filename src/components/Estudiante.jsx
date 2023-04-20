@@ -6,8 +6,20 @@ const Estudiante = () => {
 
   const [listaEstudiantes, setListaEstudiantes] = useState([])
 
-  const eliminarTarea = (idestudiante) => {
-    console.log(idestudiante);
+  ///////////////////////// ELIMINAR ESTUDIANTE ////////////////////////////////////////////////////
+  const eliminarEstudiante = async(idestudiante) => {
+    let url = Apiurl + "estudiante"
+    let res = await axios.delete(url, {
+      params: { idpersona: idestudiante }
+    })
+    console.log('++++++++++++ response estudiante ELIMINADO -----------')
+    console.log(res);
+    if (res.data.status === 'exitoso') {
+      console.log('ya se ELIMINOOOOO');
+      getEstudiantes()
+    } else {
+      console.log('ERROOOOOOOOOOOOOOOOOOOOOOOOOR');
+    }
   }
   const designarComoDocente = async (idestudiante) => {
     let url = Apiurl + "instructor"
@@ -49,7 +61,7 @@ const Estudiante = () => {
             <li className="list-group-item" key={card.idpersona}>
               <span className="lead">{card.nombre + ' ' + card.ap_paterno + ' ' + card.ci}</span>
 
-              <button className="btn btn-danger btn-sm float-end mx-2" onClick={() => eliminarTarea(card.idpersona)}>
+              <button className="btn btn-danger btn-sm float-end mx-2" onClick={() => eliminarEstudiante(card.idpersona)}>
                 Eliminar
               </button>
               {/* className="btn btn-warning btn-sm float-end"  */}

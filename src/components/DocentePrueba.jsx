@@ -139,7 +139,7 @@ const Docente = () => {
   }
   const editarDocenteBD = async (idpersonaD, nombreD, apellidoD, emailD, celularD) => {
     let url = Apiurl + "instructor"
-    let res = await axios.patch(url, null,{
+    let res = await axios.patch(url, null, {
       params: { idpersona: idpersonaD, nombre: nombreD, ap_paterno: apellidoD, correo: emailD, celular: celularD }
     })
     console.log('++++++++++++ response docente UPDATE -----------')
@@ -219,6 +219,7 @@ const Docente = () => {
             <input type="text" className="form-control mb-2" placeholder="Ingrese email"
               onChange={e => setEmail(e.target.value)} value={email}
             />
+            
             <Label>Contraseña</Label>
             <input type="password" className="form-control mb-2" placeholder="********"
               onChange={e => setPassword(e.target.value)} value={password}
