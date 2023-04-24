@@ -22,7 +22,6 @@ const Navbar = () => {
             </DropdownToggle>
             <DropdownMenu >
                 <DropdownItem><Link to="/Docente" className="btn"> Docente </Link></DropdownItem>
-                <DropdownItem><Link to="/Docente" className="btn"> Docente </Link></DropdownItem>
                 <DropdownItem><Link to="/Estudiante" className="btn"> Estudiante </Link></DropdownItem>
             </DropdownMenu>
         </Dropdown>
