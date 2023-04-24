@@ -21,7 +21,7 @@ const Navbar = () => {
             <FontAwesomeIcon icon={faBars} color='white' className='mx-3'/>
             </DropdownToggle>
             <DropdownMenu >
-                <DropdownItem><Link to="/DocentePrueba" className="btn"> DocentePrueba </Link></DropdownItem>
+                <DropdownItem><Link to="/Docente" className="btn"> Docente </Link></DropdownItem>
                 <DropdownItem><Link to="/Docente" className="btn"> Docente </Link></DropdownItem>
                 <DropdownItem><Link to="/Estudiante" className="btn"> Estudiante </Link></DropdownItem>
             </DropdownMenu>
